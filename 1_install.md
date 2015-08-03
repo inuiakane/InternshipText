@@ -10,6 +10,10 @@ Ruby on RailsでWebアプリケーションをつくるための開発環境を�
 
 ### VirtualBoxをインストールする
 
+あらかじめ準備しておいたboxを配布する。  
+（package, ruby, apache, passenger, mysql, phpmyadmin, sambaインストール済みイメージ）
+
+
 
 ### ゲストOSをインストールする
 
