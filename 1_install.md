@@ -3,39 +3,81 @@
 Ruby on RailsでWebアプリケーションをつくるための開発環境を構築しましょう。<br>
 このテキストでは、仮想マシン(VM: Virtual Machine)に開発環境を構築する方法を説明しています。
 
-### 環境
+## 環境
 
 * Host: Windows
 * Guest: Ubuntu 14.04 LTS
 
-### VirtualBoxをインストールする
+## 開発するためのツールをインストールする
 
-あらかじめ準備しておいたboxを配布する。  
-（package, ruby, apache, passenger, mysql, phpmyadmin, sambaインストール済みイメージ）
+Railsで開発するときには、以下のソフトウェアを使います。  
+最初にインストールしておきましょう。
 
+- テキストエディタ: [Atom](https://atom.io/)
 
+- SSHクライアント: [Teraterm](http://osdn.jp/projects/ttssh2/releases/)
 
-### ゲストOSをインストールする
+- Webブラウザ: [Chrome](https://www.google.co.jp/chrome/browser/desktop/)
 
+## ゲストOSの構築
 
-### ゲストOSに開発環境を構築する
+1. VirtualBoxのインストール
 
-1. package
+  仮想マシンを利用するために、仮想環境を構築するためのソフトウェア[VirtualBox]( https://www.virtualbox.org/wiki/Downloads)をインストールします。  
 
-2. ruby
+2. 開発環境boxのインポート
 
-3. apache
+  VirtualBoxを起動し、別途配布されたboxをインポートします。  
+  boxにはすでに以下がインストールされています。
+  - ruby 2.2
+  - apache 2.4
+  - mysql 5.6
+  - samba
 
-4. mysql
+## ゲストマシンへのアクセス方法
 
-5. Rails
+ゲストマシンを起動し、以下の方法でアクセスできるか確認しましょう。
 
-6. samba
+#### SSH
 
-### 開発するためのツールをインストールする
+1. Teratermのインストール
 
-* テキストエディタ
+  WindowsからゲストマシンにSSH接続する場合、**Teraterm**というターミナルアプリを使います。
 
-* SSHクライアント
+2. ゲストマシンへ接続する
 
-* Webブラウザ
+  - host: ホストのIPアドレス
+    > WindowsのIPアドレスは、コマンドプロンプトで<code>ipconfig</code>を実行することで確認できます。
+  - ユーザー: ubuntu
+  - パスワード: ______
+  - ポート: 2222
+
+#### samba
+
+エクスプローラーで<code>¥¥192.168.56.101</code>を開きます。
+
+#### ブラウザ
+
+Chromeを起動し、<code>http://192.68.56.101:8080/</code>にアクセスしてみましょう。
+
+## ゲストマシンの設定
+
+1. プロキシ設定
+
+  /etc/cntlm.confに自分の社内アカウントを設定します。
+
+  > cntlm.confは管理者権限がないと参照・編集できません。
+
+  ```
+  $ sudo vi /etc/cntlm.conf
+
+  Username        アカウント
+  Domain          ドメイン名
+  Password        パスワード
+
+  ```
+
+  cntlmを再起動します。
+  ```
+  $ sudo /etc/init.d/cntlm restart
+  ```
