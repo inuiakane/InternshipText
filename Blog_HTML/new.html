@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Blog</title>
 
-    <!--
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Blog</title>
+
+  <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     -->
-    <link rel="stylesheet" media="all" href="./assets/main.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="./assets/main.css" data-turbolinks-track="true">
 
-    <meta name="csrf-param" content="authenticity_token">
-    <meta name="csrf-token" content="qY+k7nJ56Jd9RxB8ENUOvoBkNZXBM7VgnqcAqLsKST+190XaslwDVEQIiZai14T4D96vGmI7TGUJXjdPKhdx0A==">
-  </head>
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="qY+k7nJ56Jd9RxB8ENUOvoBkNZXBM7VgnqcAqLsKST+190XaslwDVEQIiZai14T4D96vGmI7TGUJXjdPKhdx0A==">
+</head>
 
-  <body>
-    <div class="navbar">
-      <h1>Listing Articles</h1>
-    </div>
+<body>
+  <div id="navbar">
+    <h1><a href="index.html">Listing Articles</a></h1>
+  </div>
+  <div id="contents">
 
     <form class="form" accept-charset="UTF-8">
 
       <div class="field-area">
         <div class="field">
           <label>タイトル</label>
-          <input type="text" value="">
+          <input class="input-item" type="text" value="">
         </div>
 
         <div class="field">
           <label>内容</label>
-          <textarea></textarea>
+          <textarea class="input-item"></textarea>
         </div>
         <div style="clear:both;"></div>
       </div>
@@ -40,11 +42,15 @@
         <a href="show.html" class="btn">作成</a>
         <a href="index.html" class="btn">キャンセル</a>
       </div>
+  </div>
+  <div id="footer">
+    <h4>Copyright &copy; 2015 EPSON AVASYS CORPORATION.</h4>
+  </div>
+  </form>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+  <script src="./assets/main.js"></script>
 
-    </form>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-    <script src="./assets/main.js"></script>
+</body>
 
-  </body>
 </html>

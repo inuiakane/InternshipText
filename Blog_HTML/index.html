@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Blog</title>
 
-    <!--
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Blog</title>
+
+  <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     -->
-    <link rel="stylesheet" media="all" href="./assets/main.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="./assets/main.css" data-turbolinks-track="true">
 
-    <meta name="csrf-param" content="authenticity_token">
-    <meta name="csrf-token" content="qY+k7nJ56Jd9RxB8ENUOvoBkNZXBM7VgnqcAqLsKST+190XaslwDVEQIiZai14T4D96vGmI7TGUJXjdPKhdx0A==">
-  </head>
-  <body>
-    <div class="navbar">
-      <h1>Listing Articles</h1>
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="qY+k7nJ56Jd9RxB8ENUOvoBkNZXBM7VgnqcAqLsKST+190XaslwDVEQIiZai14T4D96vGmI7TGUJXjdPKhdx0A==">
+</head>
+
+<body>
+  <div id="navbar">
+    <h1><a href="index.html">Listing Articles</a></h1>
+  </div>
+
+  <div id="contents">
+
+    <div class="action">
+      <!--このクラスのボタンには上下に余白設定。その他はボタン全体で共通の設定している-->
+      <a href="new.html" class="btn">新規作成</a>
     </div>
 
-    <div class="contents">
-
-      <div class="action">
-        <a href="new.html" class="btn">新規作成</a>
+    <div>
+      <div class="article">
+        <div class="title">
+          <a href="show.html">Rubyの基礎</a>
+        </div><!--.title-->
+        <div class="comment">
+          <p>プログラミング言語Rubyについて学習します。
+            <br> プログラミング言語Rubyについて学習します。
+            <br> プログラミング言語…
+          </p>
+        </div><!--.comment-->
+        <div class="sub-action">
+          <!--このクラスのボタンには左右に余白設定。その他はボタン全体で共通の設定している-->
+          <a href="edit.html"  class="btn">編集</a>
+          <a href="#" id="del_link1" class="btn">削除</a>
+        </div><!--.sub-action-->
       </div>
-
-      <div>
-        <div class="article">
-          <div class="title"><p>Rubyの基礎</p></div>
-          <div class="comment">プログラミング言語Rubyについて学習します。</div>
-          <div>
-            <a href="edit.html" class="btn">編集</a>
-            <a href="#" id="del_link" class="btn">削除</a>
-          </div>
-        </div>
-        <div class="article">
-          <div class="title"><p>Rubyの基礎</p></div>
-          <div class="comment">プログラミング言語Rubyについて学習します。</div>
-          <div>
-            <a href="edit.html" class="btn">編集</a>
-            <a href="#" id="del_link" class="btn">削除</a>
-          </div>
-        </div>
-        <div class="article">
-          <div class="title"><p>Rubyの基礎</p></div>
-          <div class="comment">プログラミング言語Rubyについて学習します。</div>
-          <div>
-            <a href="edit.html" class="btn">編集</a>
-            <a href="#" id="del_link" class="btn">削除</a>
-          </div>
-        </div>
+      <div class="article">
+        <div class="title">
+          <a href="show.html">Rubyの基礎</a>
+        </div><!--.title-->
+        <div class="comment">
+          <p>プログラミング言語Rubyについて学習します。
+          </p>
+        </div><!--.comment-->
+        <div class="sub-action">
+          <a href="edit.html"  class="btn">編集</a>
+          <a href="#" id="del_link2" class="btn">削除</a>
+        </div><!--.sub-action-->
       </div>
-    </div>
-    <br>
+      <div class="article">
+        <div class="title">
+          <a href="show.html">Rubyの基礎</a>
+        </div><!--.title-->
+        <div class="comment">
+          <p>プログラミング言語Rubyについて学習します。
+          </p>
+        </div><!--.comment-->
+        <div class="sub-action">
+          <a href="edit.html"  class="btn">編集</a>
+          <a href="#" id="del_link3" class="btn">削除</a>
+        </div><!--.sub-action-->
+      </div><!--.article-->
+    </div><!---->
+  </div>
+  <br>
 
+  <div id="footer">
+    <h4>Copyright &copy; 2015 EPSON AVASYS CORPORATION.</h4>
+  </div>
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-    <script src="./assets/main.js"></script>
-    <script type="text/javascript">
-    jQuery("#del_link").click(function () {
-      alert("削除します。よろしいですか?");
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+  <script src="./assets/main.js"></script>
+  <script type="text/javascript">
+    jQuery("[id^='del_link']").click(function() {
+      confirm("削除します。よろしいですか?");
     });
-    </script>
 
-  </body>
+
+  </script>
+
+</body>
+
 </html>
